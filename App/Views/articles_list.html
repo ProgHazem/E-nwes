@@ -1,0 +1,13 @@
+<div class="row">
+    <div class="col-sm-6 col-md-3">
+    {% for article in articles %}
+        <div class="thumbnail">
+            <img src="http://localhost/mvc/public/media/article_images/{{article.image}}" class="img-thumbnail" alt="...">
+            <div class="caption">
+                <h3>{{ article.title }}</h3>
+                <p><a href="http://localhost/mvc/public/articles/{{ article.id }}" class="btn btn-primary view" role="button">View</a>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+</div>

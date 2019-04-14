@@ -1,0 +1,26 @@
+<script  src="../statics/js/jquery-1.11.3.min.js"></script>
+<script  src="../statics/js/bootstrap.min.js"></script>
+<script  src="../statics/js/js.js"></script>
+<script  src="../statics/js/wow.min.js"></script>
+<script>new WOW().init();</script>
+<script  src="../statics/js/jquery.nicescroll.min.js"></script>
+<script>
+            function myFunction() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myDiv");
+            tr = table.getElementsByTagName("div");
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("h3")[0];
+                if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+                }       
+            }
+            }
+        </script>

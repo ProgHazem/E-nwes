@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% include "head.html" %}
+
+    <body>
+        <!-- start navbar -->
+        {% include "header.html" %}
+        <!-- End navbar -->
+        {% block content %}
+        {% endblock content %}
+            
+          
+        <!-- Start footer -->
+        {% include "footer.html" %}
+        <!-- End footer -->
+        
+       <!-- Start script load -->
+        {% include "script.html" %}
+
+       <!-- End script load -->
+
+    </body>
+</html>

@@ -1,0 +1,82 @@
+{% extends 'layout.html' %}   
+{% block content %}
+<div class="container Profile">
+    <div class="row">
+        <div class="col-xs-12 ">
+            <br>
+            <ol class="breadcrumb">
+                <li><a href="index.php">Home</a></li>
+                <li class="active">Profile</li>
+            </ol>
+            
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="well x">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="info col-lg-8" >
+                            <h1>Journalist Profile</h1>
+                            <div class="btn_control">
+                                <a href="http://localhost/mvc/public/articles/new"><button type="button" class="btn btn-info" data-toggle="modal" data-target=".bs-example-modal-sml">Post New Article</button> </a>
+                            </div>
+                            <div class="well" style="height: 155px;">
+                                <ul class="profileData">
+                                    <li><h1>{{ user.f_name }} {{ user.l_name}}</h1></li>
+                                    <li>Email : {{ user.email }}</li>
+                                </ul>
+                                
+                            </div>
+                        </div>
+    
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+    
+                        <div class="projects">
+                                <hr>
+                                <h3 class="text-center">Articles</h3>
+                                <hr>
+                                <h3>Approved Projects</h3>
+                                <div class="row">
+                                    <div class="col-sm-6 col-md-3">
+                                    {% for article in approved %}
+                                        <div class="thumbnail">
+                                            <img src="http://localhost/mvc/public/media/article_images/{{article.image}}" class="img-thumbnail" alt="...">
+                                            <div class="caption">
+                                                <h3>{{ article.title }}</h3>
+                                                <p><a href="http://localhost/mvc/public/articles/{{ article.id }}" class="btn btn-primary view" role="button">View</a>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                    </div>
+                                </div>
+                                <hr>
+                                <h4>Pending Projects</h4>
+                                <div class="row binding">
+                                    <div class="col-sm-6 col-md-3">
+                                    {% for article in pending %}
+                                        <div class="thumbnail">
+                                            <img src="http://localhost/mvc/public/media/article_images/{{article.image}}" class="img-thumbnail" alt="...">
+                                            <div class="caption">
+                                                <h3>{{ article.title }}</h3>
+                                                <a href="http://localhost/mvc/public/articles/{{ article.id }}" class="btn btn-primary view" role="button">View</a>
+                                                <a href="http://localhost/mvc/public/articles/{{ article.id }}/edit" class="btn btn-primary view" role="button">Edit</a>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                    </div>
+                                </div>
+                        </div>
+                        <br>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}   

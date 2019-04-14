@@ -1,0 +1,66 @@
+
+{% extends 'layout.html' %}
+{% block content %}
+        <div class="container article">
+            <div class="row">
+                <div class="col-xs-12 ">
+                    <br>
+                    <ol class="breadcrumb">
+                        <li><a href="http://localhost/mvc/public/home">Home</a></li>
+                        <li class="active">Article</li>
+                    </ol>
+                    <h1 class="title">{{ article.title }}</h1>
+                    <hr>
+                    <div class="time_post">Posted on February {{ article.date_artical }} by {{ article.username }}</div>
+                    <div class="col-md-8 col-xs-12 left-slid">
+                        <br>
+                        <div class="col-md-12 col-sm-12 col-xs-12 column article-featured-image wp-caption">
+                            <img src="http://localhost/mvc/public/media/article_images/{{article.image}}" class="img-thumbnail" alt="US astronauts heading back to space on American rockets in July: NASA">
+                        </div>
+                        <div class="article-content">
+                            <div class="well" style="overflow:scroll">
+                                {{ article.body }}
+                            </div>
+                            </div>
+                            <div class="well">
+                                <form action="http://localhost/mvc/public/articles/{{article.id}}/comment/add" method="POST">
+                                    <div class="form-group">
+                                        <input type="text"  name="comment" class="comment_text" placeholder="Your Comment ..."><br>
+                                        <button class="comment_btn btn btn-success">Comment</button>
+                                    </div>
+                                </form>
+                                <div class="well">
+                                    <h3>Comments</h3>
+                                    <hr>
+                                    {% for comment in comments %}
+                                    <div class="form-group">
+                                        <ul>
+                                            <li>
+                                                <i class="fa fa-user"></i><span> {{ comment.username }}</span>
+                                                <span class="badge badge-secondary">{{comment.date_comment}}</span><br>
+                                                <input class="com" type="text" value="{{comment.content}}" disabled>
+                                                
+                                            </li>
+                                            <hr>
+                                        </ul>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                    </div>
+                    <div class="col-md-4 col-xs-12 right-slid">
+                            <div class="layer-white campaign-state show-for-medium mb20 js-campaign-state-large" data-identifier="trending"
+                            style="opacity: 1;">
+                            <div class="cs-text-contain">
+                                <div class="fixed-width-column">
+                                    
+                                    <div class="list-group-item-info"><i class="precent fa fa-line-chart" aria-hidden="true"></i>This campaign is trending!</div>
+                                </div>
+                            </div>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock content %}

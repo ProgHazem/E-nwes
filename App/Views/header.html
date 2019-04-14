@@ -1,0 +1,74 @@
+
+    
+
+    <nav class="navbar navbar-default navbar-inverse">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="http://localhost/mvc/public/home">E-N</a>
+          </div>
+      
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right sign ">
+          <li>
+            <!-- Large modal -->
+            <a href="http://localhost/mvc/public/home"> <button type="button" class="btn btn-primary" data-toggle="modal"><i class="fa fa-home"></i>
+                Home </button>|
+            </a>
+          </li>
+          {% if is_logged %}
+            {% if role == 'J' %}
+              <li>
+                  <a href="http://localhost/mvc/public/profile/{{ username }}"> <button type="button" class="btn btn-primary" data-toggle="modal"><i class="fa fa-user"></i>
+                      Profile</button>|
+                  </a>
+              </li>
+              {% endif%}
+              {% if role == 'A' %}
+              <li>
+                    <a href="http://localhost/mvc/public/admin/dashboard"> <button type="button" class="btn btn-primary" data-toggle="modal"><i class="fa fa-user"></i>
+                        Dashboard</button>|
+                    </a>
+                </li>
+              {% endif%}
+          
+            <li><!-- Large modal -->
+                    <a href="http://localhost/mvc/public/logout" class="btn btn-primary">Log Out</a> 
+              </li>
+          {% else %}
+            <li>
+
+              <a href="http://localhost/mvc/public/login"> <button type="button" class="b1 btn btn-primary"><i class="fa fa-sign-in"></i>
+                  login</button>|</a>
+            </li>
+          
+            <li>
+              <!-- Large modal -->
+              <a href="http://localhost/mvc/public/register"> <button type="button" class="btn btn-primary" data-toggle="modal"><i class="fa fa-user-plus"></i>
+                  sign up</button>
+              </a>
+            </li>
+          {% endif %}
+
+        </ul>
+
+            
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+    <nav class="navbar navbar-default  catagory">
+        <div class="container-fluid">
+            <ul class="nav navbar-nav text-center">
+                {% for category in categories%}
+                <li><a href="http://localhost/mvc/public/category/{{ category.name }}">{{ category.name }} |</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </nav>

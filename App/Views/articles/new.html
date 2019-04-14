@@ -1,0 +1,55 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<div class="reg_form tab-pane " id="creatArticle">
+        <h3 class="lead text-center">Create Article</h3>
+        {% for error in errors %}
+            <h6 class="text muted red">{{ error }}<h6>
+        {% endfor %}
+        <form role="form" class="form-horizontal" action="http://localhost/mvc/public/articles/add" method="POST" id="myForm" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="name" class="col-sm-2 control-label-left">
+                    Title</label>
+                <div class="col-sm-12">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <input type="text" name="title_p" lass="form-control" placeholder="Title" required/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="name" class="col-sm-2 control-label-left">
+                    Category</label>
+                <div class="col-sm-12">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <select name="category" lass="form-control" required/>
+                                <option selected disabled>-----</option>
+                                {% for category in categories %}
+                                <option value="{{category.id}}">{{category.name}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Body" class="col-sm-2 control-label-left">
+                    Body</label>
+                <div class="col-sm-10">
+                    <textarea style="height:200px;" name="body_p" type="text" class="form-control" id="body" placeholder="Body" required></textarea>
+                </div>
+            </div>
+            <div class="form-group" style="padding:20px 100px 20px 100px; margin:10px;">
+                <input type="file" name="fileToUpload" id="fileToUpload" style="margin:10px;">
+            </div>
+            <div class="row">
+                <div class="reg_button col-sm-12">
+                    <button type="submit" class="btn btn-success btn-sm creat">Create</button>
+                </div>
+            </div>
+        <br><br>
+    </form>
+</div>
+{% endblock content %}

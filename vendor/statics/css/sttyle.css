@@ -1,0 +1,136 @@
+body
+{
+    margin: 0;
+    padding: 0px;
+    /*  overflow-x: hidden; */
+    background: url(../../public/images/bg.jpg) no-repeat center center fixed;
+    font-family: 'Cinzel', serif;
+}
+.logo p{
+    font-family: 'Love Ya Like A Sister', cursive;
+    font-size: 70px;
+    text-align: center;
+    margin-top: 100px;
+}
+.navbar-brand{
+    font-family: 'Love Ya Like A Sister', cursive;
+    font-size: 40px;
+    padding: 18px;
+}
+.logo .f-word{
+    font-size: 20px;
+    margin-bottom: -100px;
+}
+.logo p span{
+    font-size: 150px;
+}
+.part-peaper{
+    height: 500px;
+    border: 1px solid;
+}
+.part-peaper .part1,.part2,.part3{
+    height: 300px;
+    margin: auto 100px;
+    background-color: #b4b4b4;
+    box-shadow: -1px 0px 22px 5px #222;
+}
+.part-peaper .part3{
+    width: 36%;
+    float: initial;
+    margin-left: 413px;
+}
+.part-peaper .part2{
+    /* margin-left: -141px; */
+    float: right;
+}
+.part-peaper .part1:hover,.part2:hover,.part3:hover{
+    transform: scale(1.2);
+    transition: 1s;
+}
+/* Start nav */
+.navbar-inverse {
+    border-radius: 0px;
+}
+.btn-primary {
+    margin-top: 7px;
+    margin-right: 11px;
+}
+.sign{
+    margin-top: 7px;
+    margin-right: 11px;
+    font-family: 'Courier New', Courier, monospace;
+}
+#login{
+    padding:24px;
+}
+
+#Registration{
+    padding: 20px;
+}
+input[type=text] {
+    width: 130px;
+    height: 34px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('../../public/images/searchicon.png');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+  }
+  
+  input[type=text]:focus {
+    width: 100%;
+  }
+.copy-right{
+    background-color: #000;
+    font-size: 20px;
+    color: #888;
+    font-family: 'Courier New', Courier, monospace;
+}
+@media (min-width: 768px){
+    .modal-sm {
+        width: 611px;
+    }
+}
+/* ADMIN */
+.admin{
+    background-color: #fff;
+    border-radius: 10px;
+    height: 600px;
+    margin-bottom: 50px;
+}
+.tab-content{
+    height: 400px;
+    overflow: scroll;
+}
+/* article */
+.article{
+    background-color: #fff;
+    padding: 20px;
+    font-family: 'Courier New', Courier, monospace;
+}
+.left-slid,.right-slid{
+    border: 1px solid #888;
+}
+.title{
+    font-size: 46px;
+    font-weight: bold;
+    font-family: "Open Sans", "Raleway", "Istok Web", Merriweather, "Helvetica Neue", Helvetica, sans-serif;
+}
+input[type=text].comment_text{
+    width: 100%;
+    height: 74px;
+}
+.comment_btn{
+    width: 100%;
+    font-size: 21px;
+}
+
+.progress {
+    height: 45px !important;
+}
